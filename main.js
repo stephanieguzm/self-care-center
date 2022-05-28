@@ -2,6 +2,7 @@ var receiveMessage = document.querySelector(".receive-message");
 var messageArea = document.querySelector(".message-area");
 var bellArea = document.querySelector(".bell-area");
 var randomMessage = document.getElementById("message-space");
+var clearButton = document.querySelector(".clear-button")
 var affirmList = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -17,7 +18,6 @@ var affirmList = [
   "I honor my body by trusting the signals that it sends me.",
   "I manifest perfect health by making smart choices.",
 ];
-
 var mantraList = [
 "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.",
 "Don’t let yesterday take up too much of today.",
@@ -38,18 +38,7 @@ var mantraList = [
 
 // radioButton.addEventListener('');
 receiveMessage.addEventListener('click', randomizeMessage);
-
-// user clicks affirmation or mantra radio button
-// event listener for radio button?
-// user then clicks receive message button
-// when message button is clicked, js will check which radio
-// button was selected
-// then it will find the matching array and retrieve a random message
-// from the matching array
-// the array element will then be sent to the html (innerHTML) and be displayed
-
-// at same time, bell button will be hidden in the center div
-
+clearButton.addEventListener('click', clearMessage);
 
 function getRandomMessage(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -57,9 +46,11 @@ function getRandomMessage(array) {
 
 function randomizeMessage() {
   if (document.getElementById("affirmation").checked) {
-    displayMessage(getRandomMessage(affirmList))
+    displayMessage(getRandomMessage(affirmList));
   } else if (document.getElementById("mantra").checked) {
     displayMessage(getRandomMessage(mantraList));
+  } else if (!document.getElementsByName("radio").checked) {
+    window.alert("Please select a message type!");
   }
 };
 
@@ -67,7 +58,14 @@ function displayMessage(message) {
   messageArea.classList.remove("hidden");
   bellArea.classList.add("hidden");
   randomMessage.innerText = message
+};
+
+function clearMessage() {
+  messageArea.classList.add("hidden");
+  bellArea.classList.remove("hidden");
+
 }
+
 
 
 

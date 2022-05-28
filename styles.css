@@ -90,12 +90,13 @@ p {
   border-radius: 10px;
   font-family:'Quicksand', sans-serif;
   margin: auto;
-  display: flex;
+  /* display: flex;
+  text-align: center; */
 }
 
-.messages{
+/* .messages{
   margin: auto;
-}
+} */
 
 .hidden {
   display: none!important;
@@ -105,4 +106,23 @@ svg {
   height:50px;
   width: 50px;
   margin: auto;
+}
+
+#message-space {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.clear-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #134d71;
+  font-family:'Quicksand', sans-serif;
+  border-radius: 5px;
+  color: white
 }
