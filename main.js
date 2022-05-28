@@ -36,7 +36,6 @@ var mantraList = [
 "I am the sky, the rest is weather.",
 ];
 
-// radioButton.addEventListener('');
 receiveMessage.addEventListener('click', randomizeMessage);
 clearButton.addEventListener('click', clearMessage);
 
@@ -63,38 +62,4 @@ function displayMessage(message) {
 function clearMessage() {
   messageArea.classList.add("hidden");
   bellArea.classList.remove("hidden");
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
-//
-// function getRandomElement(array) {
-//   console.log(array)
-//   var randomNum = getRandomIndex(array);
-//   var randomItem = array[randomNum];
-//   return randomItem;
-// }
-
-// function displayMessage() {
-//   for (var i = 0; i <array.length)
-// }
