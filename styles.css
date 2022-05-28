@@ -7,10 +7,6 @@ white - #ffffff;
 black - #000000;
 */
 
-* {
-  border: 1px solid red
-}
-
 html {
   height: 100%
 }
@@ -90,13 +86,7 @@ p {
   border-radius: 10px;
   font-family:'Quicksand', sans-serif;
   margin: auto;
-  /* display: flex;
-  text-align: center; */
 }
-
-/* .messages{
-  margin: auto;
-} */
 
 .hidden {
   display: none!important;
