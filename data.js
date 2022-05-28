@@ -30,4 +30,4 @@ var mantraList = [
 "The only constant is change.",
 "Onward and upward.",
 "I am the sky, the rest is weather.",
-]
+];
