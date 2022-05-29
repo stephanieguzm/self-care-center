@@ -58,11 +58,11 @@ affirmationOption.addEventListener("click", selectAffirmation);
 
 function selectMantra() {
   selectedList = mantraList;
-}
+};
 
 function selectAffirmation() {
   selectedList = affirmList;
-}
+};
 
 function getRandomMessage(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -73,7 +73,7 @@ function randomizeMessage() {
     displayMessage(getRandomMessage(selectedList))
 } else if (!selectedList) {
     alert("Please select an affirmation or mantra!")
-  }
+  };
 };
 
 function displayMessage(messageType) {
@@ -87,15 +87,15 @@ function clearMessage() {
   bellArea.classList.remove("hidden");
   for (var i = 0; i < radioButtons.length; i++) {
     radioButtons[i].checked = false;
-  }
+  };
 };
 
 function deleteMessage() {
   for (var i = 0; i < selectedList.length; i++) {
     if (selectedList[i] === randomMessage.innerText) {
       selectedList.splice(i, 1);
-    }
-  }
+    };
+  };
     clearMessage();
     alert("This message has been deleted.");
 };
