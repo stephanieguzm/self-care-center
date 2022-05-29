@@ -119,7 +119,7 @@ svg {
   color: white
 }
 
-.delete-button {
+#delete-button {
   margin-top: 10px;
   margin-bottom: 150px;
   padding: 5px;
