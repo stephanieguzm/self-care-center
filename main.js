@@ -2,6 +2,8 @@ var receiveMessage = document.querySelector(".receive-message");
 var messageArea = document.querySelector(".message-area");
 var bellArea = document.querySelector(".bell-area");
 var randomMessage = document.getElementById("message-space");
+var affirmationOption = document.getElementById("affirmation");
+var mantraOption = document.getElementById("mantra");
 var radioButtons = document.getElementsByName("radio");
 var clearButton = document.querySelector(".clear-button");
 var deleteButton = document.getElementById("delete-button");
@@ -96,5 +98,4 @@ function deleteMessage() {
   }
     clearMessage();
     alert("This message has been deleted.");
-
-}
+};
