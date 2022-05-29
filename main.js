@@ -2,11 +2,9 @@ var receiveMessage = document.querySelector(".receive-message");
 var messageArea = document.querySelector(".message-area");
 var bellArea = document.querySelector(".bell-area");
 var randomMessage = document.getElementById("message-space");
-var affirmationOption = document.getElementById("affirmation");
-var mantraOption = document.getElementById("mantra");
 var radioButtons = document.getElementsByName("radio");
 var clearButton = document.querySelector(".clear-button");
-var 
+var deleteButton = document.getElementById("delete-button");
 var affirmList = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -48,20 +46,30 @@ var mantraList = [
 "I am not afraid to be wrong.",
 "My potential is limitless, and I choose where to spend my energy.",
 ];
+var selectedList
 
 receiveMessage.addEventListener("click", randomizeMessage);
 clearButton.addEventListener("click", clearMessage);
+deleteButton.addEventListener("click", deleteMessage);
+mantraOption.addEventListener("click", selectMantra);
+affirmationOption.addEventListener("click", selectAffirmation);
+
+function selectMantra() {
+  selectedList = mantraList;
+}
+
+function selectAffirmation() {
+  selectedList = affirmList;
+}
 
 function getRandomMessage(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
 function randomizeMessage() {
-  if (affirmationOption.checked) {
-    displayMessage(getRandomMessage(affirmList))
-  } else if (mantraOption.checked) {
-    displayMessage(getRandomMessage(mantraList))
-  } else if (!radioButtons.checked) {
+  if (selectedList) {
+    displayMessage(getRandomMessage(selectedList))
+} else if (!selectedList) {
     alert("Please select an affirmation or mantra!")
   }
 };
@@ -69,7 +77,7 @@ function randomizeMessage() {
 function displayMessage(messageType) {
   messageArea.classList.remove("hidden");
   bellArea.classList.add("hidden");
-  randomMessage.innerText = messageType
+  randomMessage.innerText = messageType;
 };
 
 function clearMessage() {
@@ -79,3 +87,14 @@ function clearMessage() {
     radioButtons[i].checked = false;
   }
 };
+
+function deleteMessage() {
+  for (var i = 0; i < selectedList.length; i++) {
+    if (selectedList[i] === randomMessage.innerText) {
+      selectedList.splice(i, 1);
+    }
+  }
+    clearMessage();
+    alert("This message has been deleted.");
+
+}
